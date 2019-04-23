@@ -43,13 +43,13 @@ class HomeScreen extends Component {
                         <Card />
                     </ScrollView>
                 </View>
-
+{/* 
                 <View style={{ flex: 1 }}>
                     <Text style={styles.urgent}>Urgentes</Text>
                     <ScrollView>
                         <Urgents />
                     </ScrollView>
-                </View>
+                </View> */}
 
             </SafeAreaView>
         );

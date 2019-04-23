@@ -10,9 +10,9 @@ const styles = StyleSheet.create({
     },
     todoTitle: {
         fontWeight: 'bold',
-        fontSize: 18,
+        fontSize: 32,
         marginLeft: 18,
-        marginTop: 14,
+        marginTop: 34,
         marginBottom: 18,
     },
     urgent: {

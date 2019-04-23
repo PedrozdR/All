@@ -9,13 +9,22 @@ import styles from './styles';
 class Card extends Component {
     render() {
         return (
-            <TouchableOpacity style={styles.container}>
-                <View style={{flexDirection: 'row',justifyContent: 'center',}}>
-                    <View style={styles.cardContent}>
-                        <Icon name="home" size={42} style={styles.icon} />
-                        <Text style={styles.cardTitle}>Home</Text>
-                    </View>
+            <TouchableOpacity
+                activeOpacity={0.8}
+                style={styles.container}>
+                <View style={styles.topIcons}>
+                    <Icon name="home" size={24} style={styles.icon} />
+                    <TouchableOpacity
+                        activeOpacity={0.4}
+                    >
+                        <Icon name="ellipsis-v" size={32} style={styles.dots} />
+                    </TouchableOpacity>
                 </View>
+                <View style={styles.infosContainer}>
+                    <Text style={styles.cardTitle}>Faculdade</Text>
+                    <Text style={styles.tasks}>12 tarefas</Text>
+                </View>
+                <Text style={styles.dones}>2/4</Text>
             </TouchableOpacity>
         );
     }

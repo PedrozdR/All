@@ -1,26 +1,49 @@
 import {StyleSheet,Dimensions} from 'react-native';
 
+import colors from '../../utils/colors';
+import fonts from '../../utils/fonts';
+
 
 const styles = StyleSheet.create({
     container:{
-        height: Dimensions.get("window").height-520,
-        width: Dimensions.get("window").width-242,
+        position: 'relative',
+        height: Dimensions.get("window").height-340,
+        width: Dimensions.get("window").width-150,
         backgroundColor: '#f1f1f1',
-        marginHorizontal: 10,
-        marginVertical: 5,
         borderRadius: 10,
     },
-    cardContent:{
-        marginTop:16,
-        flexDirection: 'column',
-        justifyContent: 'center',
+    topIcons:{
+        flexDirection:'row',
+        justifyContent: 'space-between',
     },
     icon:{
-        marginTop:18
+        // position: 'absolute',
+        // left:18,
+        // top: 10,
+        borderWidth: 1,
+        borderRadius:20,
+        margin: 8,
+        padding: 8,
+    },
+    dots:{
+        padding:8
+    }, 
+    infosContainer:{
+        width: 200,
+        position: 'absolute',
+        left:18,
+        bottom:32,
     },
     cardTitle:{
-        marginTop: 8,
-        fontWeight: 'bold',
+        fontSize:28,
+    },
+    tasks:{
+        color:colors.regular
+    },
+    dones:{
+        position: 'absolute',
+        bottom:10,
+        right: 10
     }
 })
 
