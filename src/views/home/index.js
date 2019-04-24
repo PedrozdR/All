@@ -80,10 +80,7 @@ class HomeScreen extends Component {
                             <View style={{ padding: 14 }} />
                         )
                         }
-                        contentContainerStyle={{
-                            paddingLeft: 50,
-                            paddingRight: 20
-                        }}
+                        contentContainerStyle={styles.containerList}
                         showsHorizontalScrollIndicator={false}
                         renderItem={({ item }) => (
                             <TouchableOpacity

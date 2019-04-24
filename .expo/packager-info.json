@@ -3,8 +3,8 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://y5-7y9.anonymous.projetozd.exp.direct",
+  "packagerNgrokUrl": "https://packager.y5-7y9.anonymous.projetozd.exp.direct",
+  "ngrokPid": 9540,
   "webpackServerPort": null
 }

@@ -1,14 +1,14 @@
 import React from 'react';
-import {createAppContainer,createStackNavigator} from 'react-navigation';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import HomeScreen from './src/views/home';
 import TaskListScreen from './src/views/tasklist';
 
 
 const AppNavigator = createStackNavigator({
-  Home:{
+  Home: {
     screen: HomeScreen
   },
-  Task:{
+  Task: {
     screen: TaskListScreen
   }
 })
