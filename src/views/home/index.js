@@ -5,14 +5,44 @@ import Icon from '@expo/vector-icons/FontAwesome';
 
 import Card from '../../components/cards';
 import styles from './styles';
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView, FlatList } from 'react-native-gesture-handler';
 import Urgents from '../../components/urgents';
+import CheckBox from '../../components/checkbox';
 
 // create a component
 class HomeScreen extends Component {
 
     static navigationOptions = {
-        headerTitle: 'Home'
+        header: null,
+    }
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: [
+                {
+                    name: 'Faculdade',
+                    qtdT: 12,
+                    tasks: [
+                        {
+                            taskTitle: 'Meu ovo',
+                            done: Boolean,
+                            dueDate: Date
+                        }
+                    ]
+                },
+                {
+                    name: 'Trabalho',
+                    qtdT: 13
+                }
+            ]
+        }
+    }
+
+
+
+    onPressItem = (item) => {
+        this.props.navigation.navigate('Task', { task: item })
     }
 
     render() {
@@ -37,19 +67,39 @@ class HomeScreen extends Component {
 
                 <View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <Text style={styles.todoTitle}>Afazeres</Text>
+                        <Text style={styles.todoTitle}>Lista de Atividades</Text>
                     </View>
-                    <ScrollView horizontal={true}>
-                        <Card />
-                    </ScrollView>
+                    <FlatList
+                        style={styles.listContainer}
+                        horizontal={true}
+                        data={this.state.data}
+                        keyExtractor={(item, index) => {
+                            return `${index}`
+                        }}
+                        ItemSeparatorComponent={() => (
+                            <View style={{ padding: 14 }} />
+                        )
+                        }
+                        contentContainerStyle={{
+                            paddingLeft: 50,
+                            paddingRight: 20
+                        }}
+                        showsHorizontalScrollIndicator={false}
+                        renderItem={({ item }) => (
+                            <TouchableOpacity
+                                activeOpacity={0.6}
+                                onPress={() => this.onPressItem(item)}
+                            >
+                                <Card
+                                    title={item.name}
+                                    qtdTasks={item.qtdT}
+                                />
+
+                            </TouchableOpacity>
+                        )}
+                    >
+                    </FlatList>
                 </View>
-{/* 
-                <View style={{ flex: 1 }}>
-                    <Text style={styles.urgent}>Urgentes</Text>
-                    <ScrollView>
-                        <Urgents />
-                    </ScrollView>
-                </View> */}
 
             </SafeAreaView>
         );

@@ -9,9 +9,9 @@ import styles from './styles';
 class Card extends Component {
     render() {
         return (
-            <TouchableOpacity
-                activeOpacity={0.8}
-                style={styles.container}>
+            <View
+                style={styles.container}
+                >
                 <View style={styles.topIcons}>
                     <Icon name="home" size={24} style={styles.icon} />
                     <TouchableOpacity
@@ -21,11 +21,11 @@ class Card extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.infosContainer}>
-                    <Text style={styles.cardTitle}>Faculdade</Text>
-                    <Text style={styles.tasks}>12 tarefas</Text>
+                    <Text style={styles.cardTitle}>{this.props.title}</Text>
+                    <Text style={styles.tasks}>{this.props.qtdTasks} tarefas</Text>
                 </View>
                 <Text style={styles.dones}>2/4</Text>
-            </TouchableOpacity>
+            </View>
         );
     }
 }

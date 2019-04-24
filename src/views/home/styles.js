@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet,Dimensions } from 'react-native';
 
 import fonts from '../../utils/fonts';
 import colors from '../../utils/colors';
@@ -6,21 +6,7 @@ import colors from '../../utils/colors';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#dedede',
-    },
-    todoTitle: {
-        fontWeight: 'bold',
-        fontSize: 32,
-        marginLeft: 18,
-        marginTop: 34,
-        marginBottom: 18,
-    },
-    urgent: {
-        fontWeight: 'bold',
-        fontSize: 18,
-        marginLeft: 18,
-        marginTop: 14,
-        marginBottom: 18,
+        backgroundColor: '#f7f7f7',
     },
     userContainer: {
         marginTop: 10,
@@ -32,6 +18,13 @@ const styles = StyleSheet.create({
         marginTop: 10,
         fontSize: fonts.big,
         marginBottom: 15
+    },
+    todoTitle: {
+        fontWeight: 'bold',
+        fontSize: 32,
+        marginLeft: 18,
+        marginTop: 34,
+        marginBottom: 18,
     },
     taskContainer:{
         flexDirection:'row',
@@ -51,6 +44,9 @@ const styles = StyleSheet.create({
     plusIcon:{
         marginRight: 25,
         padding: 12,
+    },
+    listContainer:{
+        width: Dimensions.get('window').width,
     }
 })
 
