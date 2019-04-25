@@ -7,7 +7,7 @@ import fonts from '../../utils/fonts';
 const styles = StyleSheet.create({
     container: {
         position: 'relative',
-        height: Dimensions.get("window").height - 340,
+        height: Dimensions.get("window").height - 380,
         width: Dimensions.get("window").width - 150,
         backgroundColor: '#f1f1f1',
         borderRadius: 10,
@@ -31,14 +31,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignSelf: 'center',
         borderWidth: 3,
-        borderColor: '#000',
-        width: 200,
-        height: 200,
+        borderColor: '#6A5ACD',
+        width: 170,
+        height: 170,
         borderRadius: 100
     },
     dones: {
         alignSelf: 'center',
         fontSize: 40,
+        color:'#6A5ACD'
     }
 })
 

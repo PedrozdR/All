@@ -1,4 +1,6 @@
 export default  {
+    primary:'#6A5ACD',
+
     darker: '#111',
     dark: '#333',
     regular: '#666',

@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, FlatList,TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 
 import Icon from '@expo/vector-icons/FontAwesome';
 
@@ -9,32 +9,30 @@ import CheckBox from '../../components/checkbox';
 
 // create a component
 class TaskListScreen extends Component {
-    static navigationOptions = {
-        headerTransparent: true
-    }
+
 
     constructor(props) {
         super(props);
         this.state = {
             data: [
                 {
-                    task: 'Ganhar de rafael no lolzinho',
+                    task: 'Ver everton fidar no lolzinho',
                     done: Boolean
                 },
                 {
-                    task: 'Ganhar de rafael no lolzinho',
+                    task: 'Ver everton fidar no lolzinho',
                     done: Boolean
                 },
                 {
-                    task: 'Ganhar de rafael no lolzinho',
+                    task: 'Ver everton fidar no lolzinho',
                     done: Boolean
                 },
                 {
-                    task: 'Ganhar de rafael no lolzinho',
+                    task: 'Ver everton fidar no lolzinho',
                     done: Boolean
                 },
                 {
-                    task: 'Ganhar de rafael no lolzinho',
+                    task: 'Ver everton fidar no lolzinho',
                     done: Boolean
                 },
             ]
@@ -48,12 +46,12 @@ class TaskListScreen extends Component {
                 <Text style={styles.title}>{task.name}</Text>
                 <FlatList
                     data={this.state.data}
-                    contentContainerStyle={{ padding: 5 }}
+                    contentContainerStyle={{ padding: 12 }}
                     keyExtractor={(item, index) => {
                         return `${index}`
                     }}
                     ItemSeparatorComponent={() => (
-                        <View style={{ borderBottomWidth: 1, borderBottomColor: '#dedede' }} />
+                        <View style={{borderBottomWidth: 1, borderBottomColor: '#dedede' }} />
                     )
                     }
                     renderItem={({ item }) => (
@@ -64,8 +62,12 @@ class TaskListScreen extends Component {
                     )}
                 >
                 </FlatList>
-                <TouchableOpacity style={styles.addContainer}>
-                    <Icon name='plus-circle' size={40} color='blue' />
+                <TouchableOpacity
+                    style={styles.addContainer}
+                    activeOpacity={0.8}
+                    onPress={() => this.props.navigation.navigate('NewT')}
+                >
+                    <Text style={styles.buttonText}>Adicionar nova tarefa</Text>
                 </TouchableOpacity>
             </View>
         );

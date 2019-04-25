@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     title:{
         alignSelf: 'center',
         fontSize: 34,
-        marginTop: 12,
+        marginTop: 4,
         fontWeight: 'bold',
     },
     taskContent:{
@@ -21,9 +21,16 @@ const styles = StyleSheet.create({
         alignSelf:'center'
     },
     addContainer:{
+        alignSelf:'center',
+        backgroundColor: '#6A5ACD',
+        borderRadius: 24,
         position: 'absolute',
-        bottom:32,
-        right: 32,
+        bottom: 32
+    },
+    buttonText:{
+        padding: 18,
+        color: '#fff',
+        fontWeight:'bold'
     }
 })
 

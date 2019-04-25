@@ -9,37 +9,45 @@ const styles = StyleSheet.create({
         backgroundColor: '#f7f7f7',
     },
     userContainer: {
-        marginTop: 10,
+        paddingTop: 24,
         alignItems: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: colors.light,
+        backgroundColor: colors.primary,
     },
     username: {
         marginTop: 10,
         fontSize: fonts.big,
-        marginBottom: 15
+        marginBottom: 15,
+        fontWeight: 'bold',
+        color:colors.white,
+        fontSize:18
     },
     todoTitle: {
         fontWeight: 'bold',
         fontSize: 32,
         marginLeft: 18,
-        marginTop: 34,
+        marginTop: 20,
         marginBottom: 18,
     },
     taskContainer: {
+        backgroundColor: colors.primary,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        borderBottomWidth: 1,
-        borderBottomColor: colors.light
+    },
+    newListContainer: {
+        alignItems: 'center',
+        padding: 14,
+        backgroundColor: colors.primary,
     },
     count: {
         alignSelf: 'center',
         fontSize: 24,
-        marginTop: 8
+        marginTop: 8,
+        color: colors.white
     },
     taskText: {
         fontSize: 12,
-        marginBottom: 8
+        marginBottom: 8,
+        color: colors.white
     },
     plusIcon: {
         marginRight: 25,

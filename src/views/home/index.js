@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, TouchableOpacity,Image } from 'react-native';
 import Icon from '@expo/vector-icons/FontAwesome';
 
 import Card from '../../components/cards';
@@ -12,9 +12,6 @@ import CheckBox from '../../components/checkbox';
 // create a component
 class HomeScreen extends Component {
 
-    static navigationOptions = {
-        header: null,
-    }
 
     constructor(props) {
         super(props);
@@ -50,8 +47,10 @@ class HomeScreen extends Component {
             <SafeAreaView style={styles.container}>
 
                 <View style={styles.userContainer}>
-                    <View style={{ backgroundColor: '#000', padding: 20, width: 60, height: 60, borderRadius: 40 }}></View>
-                    <Text style={styles.username}>Usuario Default</Text>
+                    <View style={{width: 80, height: 80, borderRadius: 40, borderColor: '#f1f1f1', borderWidth: 2,overflow:'hidden' }}>
+                        <Image style={{alignSelf:'center',width: 80,height: 80,}} source={require('../../../assets/everton.jpg')} />
+                    </View>
+                    <Text style={styles.username}>Everton Mateus</Text>
                 </View>
 
                 <View style={styles.taskContainer}>
@@ -65,39 +64,43 @@ class HomeScreen extends Component {
                     </View>
                 </View>
 
-                <View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <Text style={styles.todoTitle}>Lista de Atividades</Text>
-                    </View>
-                    <FlatList
-                        style={styles.listContainer}
-                        horizontal={true}
-                        data={this.state.data}
-                        keyExtractor={(item, index) => {
-                            return `${index}`
-                        }}
-                        ItemSeparatorComponent={() => (
-                            <View style={{ padding: 14 }} />
-                        )
-                        }
-                        contentContainerStyle={styles.containerList}
-                        showsHorizontalScrollIndicator={false}
-                        renderItem={({ item }) => (
-                            <TouchableOpacity
-                                activeOpacity={0.6}
-                                onPress={() => this.onPressItem(item)}
-                            >
-                                <Card
-                                    title={item.name}
-                                    qtdTasks={item.qtdT}
-                                />
-
-                            </TouchableOpacity>
-                        )}
-                    >
-                    </FlatList>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Text style={styles.todoTitle}>Lista de Atividades</Text>
                 </View>
+                <FlatList
+                    style={styles.listContainer}
+                    horizontal={true}
+                    data={this.state.data}
+                    keyExtractor={(item, index) => {
+                        return `${index}`
+                    }}
+                    ItemSeparatorComponent={() => (
+                        <View style={{ padding: 14 }} />
+                    )
+                    }
+                    contentContainerStyle={styles.containerList}
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item }) => (
+                        <TouchableOpacity
+                            activeOpacity={0.6}
+                            onPress={() => this.onPressItem(item)}
+                        >
+                            <Card
+                                title={item.name}
+                                qtdTasks={item.qtdT}
+                            />
 
+                        </TouchableOpacity>
+                    )}
+                >
+                </FlatList>
+                <TouchableOpacity
+                    activeOpacity={0.7}
+                    style={styles.newListContainer}
+                >
+                    <Icon name='plus' size={24} color='#f1f1f1' />
+                    <Text style={{ color: '#f1f1f1' }}>Nova Lista</Text>
+                </TouchableOpacity>
             </SafeAreaView>
         );
     }
