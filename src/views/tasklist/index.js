@@ -6,9 +6,18 @@ import Icon from '@expo/vector-icons/FontAwesome';
 
 import styles from './styles';
 import CheckBox from '../../components/checkbox';
+import Tasks from '../../components/tasks';
 
 // create a component
 class TaskListScreen extends Component {
+    static navigationOptions = ({ navigation }) => {
+        return {
+            headerTitle: (
+                <Text style={styles.navigaionTitle}>{navigation.getParam("task").name}</Text>
+            )
+        };
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -18,30 +27,32 @@ class TaskListScreen extends Component {
                     done: Boolean
                 },
                 {
-                    task: 'Ver everton fidar no lolzinho',
+                    task: 'Carregar rafael no lolzin',
                     done: Boolean
                 },
                 {
-                    task: 'Ver everton fidar no lolzinho',
+                    task: 'Ver Rafael dar firstblood',
                     done: Boolean
                 },
                 {
-                    task: 'Ver everton fidar no lolzinho',
+                    task: 'Ver Renan dar pentakill',
                     done: Boolean
                 },
                 {
-                    task: 'Ver everton fidar no lolzinho',
+                    task: 'Ver lari perder pra Rafa no x1 oakwpdkaopwdkaowkdpokawopdkaopwkdopakwd',
                     done: Boolean
                 },
             ]
         }
     }
 
+    taskDetails = (item) => {
+        this.props.navigation.navigate("Task", { data: item })
+    }
+
     render() {
-        const { task } = this.props.navigation.state.params
         return (
             <View style={styles.container}>
-                <Text style={styles.title}>{task.name}</Text>
                 <FlatList
                     data={this.state.data}
                     contentContainerStyle={{ padding: 12 }}
@@ -49,14 +60,14 @@ class TaskListScreen extends Component {
                         return `${index}`
                     }}
                     ItemSeparatorComponent={() => (
-                        <View style={{borderBottomWidth: 1, borderBottomColor: '#dedede' }} />
+                        <View style={{ borderBottomWidth: 1, borderBottomColor: '#dedede' }} />
                     )
                     }
                     renderItem={({ item }) => (
-                        <View style={styles.taskContent}>
-                            <CheckBox />
-                            <Text style={styles.task}>{item.task}</Text>
-                        </View>
+                        <Tasks
+                            onPress={() => this.taskDetails()}
+                            task={item.task}
+                        />
                     )}
                 >
                 </FlatList>

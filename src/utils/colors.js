@@ -1,7 +1,8 @@
 export default  {
-    primary:'#6A5ACD',
+    primary:'#7158e2',
 
-    darker: '#111',
+    red:'#ff3838',
+    darker: '#3d3d3d',
     dark: '#333',
     regular: '#666',
     light : '#C0C0C0',

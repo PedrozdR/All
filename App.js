@@ -6,14 +6,15 @@ import TaskListScreen from './src/views/tasklist';
 import NewTaskScreen from './src/views/newTask';
 import NewListScreen from './src/views/newlist';
 import ConcludedScreen from './src/views/concluded';
-import CreatedScreen from './src/views/created';
+import PendingScreen from './src/views/pending';
+import TaskScreen from './src/views/tasklist/task';
 
 
 const AppNavigator = createStackNavigator({
   Home: {
     screen: HomeScreen
   },
-  Task: {
+  TaskList: {
     screen: TaskListScreen
   },
   NewT: {
@@ -25,13 +26,16 @@ const AppNavigator = createStackNavigator({
   Concluded:{
     screen: ConcludedScreen
   },
-  Created:{
-    screen: CreatedScreen
+  Pending:{
+    screen: PendingScreen
+  },
+  Task:{
+    screen: TaskScreen
   }
+
 },
   {
     defaultNavigationOptions: {
-      headerTransparent: true,
       headerTintColor: '#6A5ACD'
     }
   }

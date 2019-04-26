@@ -1,8 +1,13 @@
 import {StyleSheet} from 'react-native';
 
+import colors from '../../utils/colors';
+
 const styles = StyleSheet.create({
+    navigaionTitle:{
+        fontSize: 28,
+        color: colors.primary
+    },
     container:{
-        marginTop:20,
         flex:1,
         position: 'relative'
     },
@@ -12,17 +17,9 @@ const styles = StyleSheet.create({
         marginTop: 4,
         fontWeight: 'bold',
     },
-    taskContent:{
-        flexDirection: 'row',
-    },
-    task:{
-        flexDirection:'column',
-        fontSize:18,
-        alignSelf:'center'
-    },
     addContainer:{
         alignSelf:'center',
-        backgroundColor: '#6A5ACD',
+        backgroundColor: colors.primary,
         borderRadius: 24,
         position: 'absolute',
         bottom: 32

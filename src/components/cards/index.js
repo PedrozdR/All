@@ -19,7 +19,6 @@ class Card extends PureComponent {
                     <Text style={styles.cardTitle}>{this.props.title}</Text>
                     <Text style={styles.tasks}>{this.props.qtdTasks} tarefas</Text>
                 </View>
-
             </View>
         );
     }

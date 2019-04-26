@@ -5,15 +5,15 @@ import { View, Text } from 'react-native';
 import styles from './styles';
 
 // create a component
-class CreatedScreen extends Component {
+class PendingScreen extends Component {
     static navigationOptions = {
         headerTransparent: false,
-        headerTitle: 'Tarefas Criadas',
+        headerTitle: 'Tarefas Pendentes',
     }
     render() {
         return (
             <View style={styles.container}>
-                <Text>CreatedScreen</Text>
+                <Text>PendingScreen</Text>
             </View>
         );
     }
@@ -21,4 +21,4 @@ class CreatedScreen extends Component {
 
 
 //make this component available to the app
-export default CreatedScreen;
+export default PendingScreen;

@@ -13,13 +13,26 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: colors.primary,
     },
+    avatarContainer: {
+        width: 80,
+        height: 80,
+        borderRadius: 40,
+        borderColor: '#f1f1f1',
+        borderWidth: 2,
+        overflow: 'hidden'
+    },
+    avatar: {
+        alignSelf: 'center',
+        width: 80,
+        height: 80,
+    },
     username: {
         marginTop: 10,
         fontSize: fonts.big,
         marginBottom: 15,
         fontWeight: 'bold',
-        color:colors.white,
-        fontSize:18
+        color: colors.white,
+        fontSize: 18
     },
     todoTitle: {
         fontWeight: 'bold',
@@ -27,7 +40,7 @@ const styles = StyleSheet.create({
         marginLeft: 18,
         marginTop: 20,
         marginBottom: 18,
-        color:'#32303D'
+        color: '#32303D'
     },
     taskContainer: {
         backgroundColor: colors.primary,
@@ -42,22 +55,28 @@ const styles = StyleSheet.create({
         backgroundColor: colors.primary,
         position: 'absolute',
         right: 15,
-        bottom:15
+        bottom: 15
     },
-    icon:{
+    icon: {
         flexDirection: 'column',
-        marginTop:14
+        marginTop: 14
     },
     count: {
         alignSelf: 'center',
         fontSize: 24,
         marginTop: 8,
-        color: colors.white
+        color: colors.white,
     },
     taskText: {
         fontSize: 12,
         marginBottom: 8,
-        color: colors.white
+        color: colors.white,
+        fontWeight: 'bold'
+    },
+    todoListContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
     plusIcon: {
         marginRight: 25,
