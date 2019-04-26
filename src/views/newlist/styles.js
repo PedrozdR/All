@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 import colors from '../../utils/colors';
-import fonts from '../../utils/fonts';
+
 
 const styles = StyleSheet.create({
     container: {
@@ -23,25 +23,12 @@ const styles = StyleSheet.create({
         // height: Dimensions.get('window').height - 520,
         // borderRadius: 10,
     },
-    icon: {
-        color: colors.primary
-    },
-    dateContainer: {
-        flexDirection: 'row',
-        margin: 18,
-    },
-    date: {
-        color: colors.light,
-        fontSize: 18,
-        alignSelf: 'center',
-        marginLeft: 8,
-    },
     addTask: {
         alignSelf: 'center',
         backgroundColor: colors.primary,
         borderRadius: 14,
         width: 170,
-
+        marginTop:24
     },
     buttonText: {
         alignSelf: 'center',

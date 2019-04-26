@@ -1,21 +1,18 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, SafeAreaView, TouchableOpacity,Image } from 'react-native';
+import { View, Text, SafeAreaView, TouchableOpacity, Image, FlatList } from 'react-native';
 import Icon from '@expo/vector-icons/FontAwesome';
 
 import Card from '../../components/cards';
 import styles from './styles';
-import { ScrollView, FlatList } from 'react-native-gesture-handler';
-import Urgents from '../../components/urgents';
-import CheckBox from '../../components/checkbox';
+
 
 // create a component
 class HomeScreen extends Component {
-
-
     constructor(props) {
         super(props);
         this.state = {
+            showModal: false,
             data: [
                 {
                     name: 'Faculdade',
@@ -35,33 +32,40 @@ class HomeScreen extends Component {
             ]
         }
     }
-
-
-
     onPressItem = (item) => {
         this.props.navigation.navigate('Task', { task: item })
     }
 
+    showModal() {
+        this.setState({
+            showModal: !this.state.showModal
+        })
+    }
     render() {
         return (
             <SafeAreaView style={styles.container}>
-
                 <View style={styles.userContainer}>
-                    <View style={{width: 80, height: 80, borderRadius: 40, borderColor: '#f1f1f1', borderWidth: 2,overflow:'hidden' }}>
-                        <Image style={{alignSelf:'center',width: 80,height: 80,}} source={require('../../../assets/everton.jpg')} />
+                    <View style={{ width: 80, height: 80, borderRadius: 40, borderColor: '#f1f1f1', borderWidth: 2, overflow: 'hidden' }}>
+                        <Image style={{ alignSelf: 'center', width: 80, height: 80, }} source={require('../../../assets/everton.jpg')} />
                     </View>
                     <Text style={styles.username}>Everton Mateus</Text>
                 </View>
 
                 <View style={styles.taskContainer}>
-                    <View>
+                    <TouchableOpacity
+                        activeOpacity={0.8}
+                        onPress={() => this.props.navigation.navigate("Created")}
+                    >
                         <Text style={styles.count}>50</Text>
                         <Text style={styles.taskText}>Tarefas criadas</Text>
-                    </View>
-                    <View>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        activeOpacity={0.8}
+                        onPress={() => this.props.navigation.navigate("Concluded")}
+                    >
                         <Text style={styles.count}>30</Text>
                         <Text style={styles.taskText}>Tarefas Concluidas</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -94,12 +98,15 @@ class HomeScreen extends Component {
                     )}
                 >
                 </FlatList>
+
                 <TouchableOpacity
                     activeOpacity={0.7}
                     style={styles.newListContainer}
+                    onPress={() => {
+                        this.props.navigation.navigate("NewL")
+                    }}
                 >
-                    <Icon name='plus' size={24} color='#f1f1f1' />
-                    <Text style={{ color: '#f1f1f1' }}>Nova Lista</Text>
+                    <Icon name='plus' size={22} color='#f1f1f1' style={styles.icon}/>
                 </TouchableOpacity>
             </SafeAreaView>
         );

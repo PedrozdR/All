@@ -1,30 +1,29 @@
 //import liraries
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
 import Icon from '@expo/vector-icons/FontAwesome';
 
 import styles from './styles';
 
-// create a component
-class CheckBox extends Component {
+// create a PureComponent
+class CheckBox extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
             isChecked: false
         }
     }
-
     check() {
         this.setState({
             isChecked: !this.state.isChecked
         })
     }
-
     render() {
         return (
             <View style={styles.container}>
                 <TouchableOpacity
+                    {...this.props}
                     activeOpacity={0.8}
                     onPress={() => this.check()}
                 >

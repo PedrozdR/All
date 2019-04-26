@@ -7,17 +7,19 @@ import fonts from '../../utils/fonts';
 const styles = StyleSheet.create({
     container: {
         position: 'relative',
-        height: Dimensions.get("window").height - 380,
-        width: Dimensions.get("window").width - 150,
+        height: Dimensions.get("window").height - 390,
+        width: Dimensions.get("window").width - 170,
         backgroundColor: '#f1f1f1',
         borderRadius: 10,
         paddingTop: 32,
     },
     infosContainer: {
-        margin: 18
+        marginTop: 30,
+        marginLeft: 18
+        
     },
     cardTitle: {
-        fontSize: 28,
+        fontSize: 22,
     },
     tasks: {
         color: colors.regular
@@ -32,8 +34,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         borderWidth: 3,
         borderColor: '#6A5ACD',
-        width: 170,
-        height: 170,
+        width: 160,
+        height: 160,
         borderRadius: 100
     },
     dones: {

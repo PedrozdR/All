@@ -1,12 +1,12 @@
 //import liraries
-import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, Text } from 'react-native';
 import Icon from '@expo/vector-icons/FontAwesome';
 
 import styles from './styles';
 
 // create a component
-class Card extends Component {
+class Card extends PureComponent {
     render() {
         return (
             <View style={styles.container}>

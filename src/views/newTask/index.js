@@ -1,8 +1,10 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, SafeAreaView, TextInput, ScrollView,TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, TextInput, ScrollView, TouchableOpacity } from 'react-native';
 
 import Icon from '@expo/vector-icons/FontAwesome';
+
+import Button from '../../components/button';
 
 import styles from './styles';
 
@@ -16,14 +18,21 @@ class NewTaskScreen extends Component {
         return (
             <SafeAreaView style={styles.container}>
                 <ScrollView>
-                    <TextInput multiline={true} style={styles.input} placeholder='Oque deseja ser lembrado?' />
-                    <View style={styles.task}> 
-                        <Icon name='calendar' size={24} style={styles.icon} />
+                    <View style={styles.inputContainer}>
+                        <TextInput multiline={true} style={styles.input} placeholder='Oque deseja ser lembrado?' />
                     </View>
+                    <TouchableOpacity
+                        style={styles.dateContainer}
+                        activeOpacity={0.8}
+                    >
+                        <Icon name='calendar' size={24} style={styles.icon} />
+
+                        <Text style={styles.date}>Sem data</Text>
+                    </TouchableOpacity>
+                    <Button 
+                    label='Adicionar'
+                    />
                 </ScrollView>
-                <TouchableOpacity>
-                    <Text>Adicionar</Text>
-                </TouchableOpacity>
             </SafeAreaView>
         );
     }

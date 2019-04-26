@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
         marginLeft: 18,
         marginTop: 20,
         marginBottom: 18,
+        color:'#32303D'
     },
     taskContainer: {
         backgroundColor: colors.primary,
@@ -35,8 +36,17 @@ const styles = StyleSheet.create({
     },
     newListContainer: {
         alignItems: 'center',
-        padding: 14,
+        width: 50,
+        height: 50,
+        borderRadius: 50,
         backgroundColor: colors.primary,
+        position: 'absolute',
+        right: 15,
+        bottom:15
+    },
+    icon:{
+        flexDirection: 'column',
+        marginTop:14
     },
     count: {
         alignSelf: 'center',
@@ -70,7 +80,8 @@ const styles = StyleSheet.create({
         shadowRadius: 2.22,
         //Android
         elevation: 3,
-    }
+    },
+
 })
 
 export default styles

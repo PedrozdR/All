@@ -9,8 +9,6 @@ import CheckBox from '../../components/checkbox';
 
 // create a component
 class TaskListScreen extends Component {
-
-
     constructor(props) {
         super(props);
         this.state = {
