@@ -22,10 +22,6 @@ const styles = StyleSheet.create({
         paddingLeft: 8,
         paddingBottom: 8,
         marginTop: 12,
-        // backgroundColor: '#dedede',
-        // width: Dimensions.get('window').width - 32,
-        // height: Dimensions.get('window').height - 520,
-        // borderRadius: 10,
     },
     icon: {
         color: colors.primary

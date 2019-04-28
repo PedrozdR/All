@@ -1,6 +1,6 @@
 //import liraries
 import React, { PureComponent } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from '@expo/vector-icons/FontAwesome';
 
 import styles from './styles';
@@ -18,6 +18,9 @@ class Card extends PureComponent {
                 <View style={styles.infosContainer}>
                     <Text style={styles.cardTitle}>{this.props.title}</Text>
                     <Text style={styles.tasks}>{this.props.qtdTasks} tarefas</Text>
+                    <TouchableOpacity {...this.props}>
+                        <Icon name='edit' size={24} style={styles.editIcon} />
+                    </TouchableOpacity>
                 </View>
             </View>
         );

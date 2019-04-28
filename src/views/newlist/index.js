@@ -4,6 +4,8 @@ import { View, Text, TextInput, SafeAreaView, TouchableOpacity } from 'react-nat
 
 import styles from './styles';
 import Button from '../../components/button';
+import MyInput from '../../components/input';
+import { ScrollView } from 'react-native-gesture-handler';
 
 // create a component
 class NewListScreen extends Component {
@@ -32,13 +34,17 @@ class NewListScreen extends Component {
     render() {
         return (
             <SafeAreaView>
-                <View style={styles.inputContainer}>
-                    <TextInput onChangeText={(text) => this._onChangeText(text)} multiline={true} style={styles.input} placeholder='Digite o título da lista' />
-                </View>
-                <Button
-                    label='Adicionar'
-                    onPress={() => this.teste()}
-                />
+                <ScrollView>
+                    <MyInput
+                        multiline={true}
+                        placeholder="Digite o título da lista"
+                        onChangeText={(text) => this._onChangeText(text)}
+                    />
+                    <Button
+                        label='Adicionar'
+                        onPress={() => this.teste()}
+                    />
+                </ScrollView>
             </SafeAreaView>
 
         );

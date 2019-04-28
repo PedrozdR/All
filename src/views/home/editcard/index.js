@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, SafeAreaView, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import { View, SafeAreaView, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 
 import Icon from '@expo/vector-icons/FontAwesome';
 
@@ -8,18 +8,19 @@ import Button from '../../../components/button';
 import styles from './styles';
 
 // create a component
-class TaskScreen extends Component {
+class EditCardScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            editText: ''
         }
     }
     static navigationOptions = {
-        title: 'Editar tarefa',
+        title: 'Editar Lista',
         headerRight: (
             <TouchableOpacity
-                onPress={() => { alert("Tarefa exluida !") }}
+            onPress={()=>{alert("Lista exluida !")}}
+                activeOpacity={0.8}
             >
                 <Icon name='trash' size={24} style={styles.deleteIcon} />
             </TouchableOpacity>
@@ -27,29 +28,33 @@ class TaskScreen extends Component {
     }
 
 
+    _onChange(text) {
+        this.setState({
+            editText: text
+        })
+    }
+
+
     render() {
+
+        const { task } = this.props.navigation.state.params
+
         return (
             <SafeAreaView style={styles.container}>
                 <ScrollView>
                     <View style={styles.inputContainer}>
                         <TextInput
+                            onChangeText={(text) => this._onChange(text)}
                             multiline={true}
                             style={styles.input}
-                            placeholder='Oque deseja ser lembrado?'
-                            value={({ navigation }) => {
-                                navigation.getParams("data").task
-                            }}
+                            placeholder='Atualizar lista'
                         />
                     </View>
-                    <TouchableOpacity
-                        style={styles.dateContainer}
-                        activeOpacity={0.8}
-                    >
-                        <Icon name='calendar' size={24} style={styles.icon} />
-
-                        <Text style={styles.date}>Sem data</Text>
-                    </TouchableOpacity>
                     <Button
+                        onPress={() => {
+                            console.warn(this.state.editText);
+
+                        }}
                         label='Editar'
                     />
                 </ScrollView>
@@ -59,4 +64,4 @@ class TaskScreen extends Component {
 }
 
 //make this component available to the app
-export default TaskScreen;
+export default EditCardScreen;

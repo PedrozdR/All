@@ -21,15 +21,15 @@ class CheckBox extends PureComponent {
     }
     render() {
         return (
-            <View style={styles.container}>
                 <TouchableOpacity
                     {...this.props}
                     activeOpacity={0.8}
                     onPress={() => this.check()}
+                    style={styles.container}
                 >
-                    <Icon name={this.state.isChecked == false ? 'circle' : 'check-circle'}  size={26} color='#6A5ACD' style={styles.icon} />
+                    <Icon name={this.state.isChecked == false ? 'circle' : 'check-circle'}  size={26} style={styles.icon} />
                 </TouchableOpacity>
-            </View>
+       
         );
     }
 }

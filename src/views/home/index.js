@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, Image, FlatList } from 'react-native';
+
 import Icon from '@expo/vector-icons/FontAwesome';
 
 //My Components
@@ -31,6 +32,9 @@ class HomeScreen extends Component {
     }
     onPressItem = (item) => {
         this.props.navigation.navigate('TaskList', { task: item })
+    }
+    editCard = (item) =>{
+        this.props.navigation.navigate('EditCard', {task: item})
     }
 
     render() {
@@ -84,6 +88,7 @@ class HomeScreen extends Component {
                             <Card
                                 title={item.name}
                                 qtdTasks={item.qtdT}
+                                onPress={()=> this.editCard(item)}
                             />
 
                         </TouchableOpacity>

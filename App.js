@@ -1,5 +1,7 @@
 import React from 'react';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
+import colors from './src/utils/colors';
+
 
 import HomeScreen from './src/views/home';
 import TaskListScreen from './src/views/tasklist';
@@ -8,6 +10,7 @@ import NewListScreen from './src/views/newlist';
 import ConcludedScreen from './src/views/concluded';
 import PendingScreen from './src/views/pending';
 import TaskScreen from './src/views/tasklist/task';
+import EditCardScreen from './src/views/home/editcard';
 
 
 const AppNavigator = createStackNavigator({
@@ -20,23 +23,26 @@ const AppNavigator = createStackNavigator({
   NewT: {
     screen: NewTaskScreen
   },
-  NewL:{
+  NewL: {
     screen: NewListScreen
   },
-  Concluded:{
+  Concluded: {
     screen: ConcludedScreen
   },
-  Pending:{
+  Pending: {
     screen: PendingScreen
   },
-  Task:{
+  Task: {
     screen: TaskScreen
+  },
+  EditCard: {
+    screen: EditCardScreen
   }
 
 },
   {
     defaultNavigationOptions: {
-      headerTintColor: '#6A5ACD'
+      headerTintColor: colors.primary
     }
   }
 )

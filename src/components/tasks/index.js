@@ -16,10 +16,13 @@ class Tasks extends Component {
             <View style={styles.taskContent}>
                 <CheckBox />
                 <TouchableOpacity
-                {...this.props}
-                activeOpacity={0.7}
+                    {...this.props}
+                    activeOpacity={0.7}
                 >
                     <Text style={styles.task}>{this.props.task}</Text>
+                    {/* <View style={styles.dueDate}>
+                        <Icon name='calendar' size={24} />
+                    </View> */}
                 </TouchableOpacity>
             </View>
         );

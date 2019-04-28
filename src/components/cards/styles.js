@@ -16,13 +16,20 @@ const styles = StyleSheet.create({
     infosContainer: {
         marginTop: 30,
         marginLeft: 18
-        
+
     },
     cardTitle: {
         fontSize: 22,
     },
     tasks: {
         color: colors.regular
+    },
+    editIcon:{
+        color: colors.primary,
+        padding:8,
+        position: 'absolute',
+        right: 10,
+        bottom:8
     },
     donesContainer: {
         flexDirection: 'column',
@@ -33,7 +40,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignSelf: 'center',
         borderWidth: 3,
-        borderColor: '#6A5ACD',
+        borderColor: colors.primary,
         width: 160,
         height: 160,
         borderRadius: 100
@@ -41,7 +48,7 @@ const styles = StyleSheet.create({
     dones: {
         alignSelf: 'center',
         fontSize: 40,
-        color:'#6A5ACD'
+        color: colors.primary
     }
 })
 

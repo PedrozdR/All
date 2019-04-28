@@ -5,7 +5,6 @@ import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import Icon from '@expo/vector-icons/FontAwesome';
 
 import styles from './styles';
-import CheckBox from '../../components/checkbox';
 import Tasks from '../../components/tasks';
 
 // create a component
